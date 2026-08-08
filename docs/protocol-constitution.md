@@ -2,9 +2,8 @@
 
 ## Status
 
-Phase 0 establishes the rules for developing ECHO. It does not define chain
-state, account format, transaction format, block format, consensus, networking,
-storage, RPC, wallet behavior, supply, rewards, fees, or distribution.
+Phase 0 established the rules for developing ECHO. Phase 1 establishes the
+cryptographic primitives future protocol phases will use.
 
 ## Project Identity
 
@@ -12,6 +11,16 @@ storage, RPC, wallet behavior, supply, rewards, fees, or distribution.
 - Project type: independent blockchain network
 - Native asset: ECHO coin
 - Implementation language: TypeScript on Node.js
+- Maximum supply: 21,000,000 ECHO
+- Smallest unit: 100,000,000 atomic units per ECHO
+- Consensus family: Proof of Work
+- Proof-of-Work hash algorithm: SHA-256
+- Target block interval: approximately 2 minutes
+- Initial block subsidy: 50 ECHO
+- Emission model: Bitcoin-inspired halving
+- Premine: 0 ECHO
+- Creator allocation: 0 ECHO
+- Transaction fees: paid to the successful miner
 
 ECHO is not a token deployed on another blockchain.
 
@@ -52,18 +61,15 @@ ECHO is not a token deployed on another blockchain.
 
 ## Current Unresolved Protocol Decisions
 
-The following decisions are intentionally unresolved after Phase 0:
+The following decisions are intentionally unresolved after Phase 1:
 
-- smallest monetary denomination
 - address format
-- key type and signature scheme
 - wallet seed and derivation standard
 - transaction data model
 - block data model
 - genesis block contents
-- consensus algorithm parameters
-- proof-of-work hash function and difficulty rules
-- coin supply, issuance, rewards, and fee policy
+- exact halving interval
+- difficulty-adjustment algorithm
 - state model
 - mempool policy
 - P2P message formats

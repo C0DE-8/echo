@@ -7,16 +7,13 @@ export const PROTOCOL_KIND = "independent-blockchain";
 export const NATIVE_ASSET_NAME = "ECHO";
 
 export const UNRESOLVED_PROTOCOL_DECISIONS = [
-  "smallest monetary denomination",
   "address format",
-  "key type and signature scheme",
   "wallet seed and derivation standard",
   "transaction data model",
   "block data model",
   "genesis block contents",
-  "consensus algorithm parameters",
-  "proof-of-work hash function and difficulty rules",
-  "coin supply, issuance, rewards, and fee policy",
+  "exact halving interval",
+  "difficulty-adjustment algorithm",
   "state model",
   "mempool policy",
   "P2P message formats",

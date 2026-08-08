@@ -7,7 +7,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "test": "npm run build && node --test dist-tests/tests/*.test.js"
+    "test": "npm run build && node --test $(find dist-tests/tests -name '*.test.js' -type f | sort)"
   },
   "devDependencies": {
     "@types/node": "^22.13.10",

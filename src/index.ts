@@ -11,3 +11,13 @@ export {
   getCurrentProtocolPhase,
   PROTOCOL_PHASES
 } from "./protocol/phases.js";
+export {
+  generateKeyPair,
+  hash,
+  normalizeCryptoInput,
+  sign,
+  SIGNATURE_ALGORITHM,
+  verify,
+  type EchoKeyPair,
+  type HashInput
+} from "./crypto/index.js";

@@ -2,7 +2,7 @@
 
 ECHO is an independent blockchain project implemented in TypeScript.
 
-This repository is currently in **Phase 0 - Protocol Constitution**. No wallet,
+This repository is currently in **Phase 1 - Cryptography**. No wallet,
 transaction, consensus, P2P, RPC, testnet, or real-money functionality is
 implemented yet.
 
@@ -30,7 +30,7 @@ npm run build
 
 ## Current Scope
 
-Phase 0 establishes:
+Phase 0 established:
 
 - project structure
 - TypeScript tooling
@@ -38,3 +38,10 @@ Phase 0 establishes:
 - development-phase definitions
 - unresolved decision tracking
 - tests for the Phase 0 foundation
+
+Phase 1 adds:
+
+- SHA-256 hashing
+- Ed25519 key generation
+- Ed25519 signing and verification
+- cryptography documentation and tests
