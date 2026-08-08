@@ -73,3 +73,30 @@ export {
   type TransactionValidationResult,
   type UnsignedTransaction
 } from "./transaction/index.js";
+export {
+  BLOCK_ERROR_CODES,
+  BLOCK_VERSION,
+  calculateTransactionRoot,
+  createBlock,
+  deserializeBlock,
+  deserializeBlockHeader,
+  EMPTY_TRANSACTION_ROOT,
+  GENESIS_PREVIOUS_HASH,
+  getBlockId,
+  invalidBlock,
+  MAX_BLOCK_HEIGHT,
+  MAX_BLOCK_TIMESTAMP,
+  MAX_SERIALIZED_BLOCK_BYTES,
+  MAX_SERIALIZED_TRANSACTION_BYTES,
+  MAX_TRANSACTIONS_PER_BLOCK,
+  serializeBlock,
+  serializeBlockHeader,
+  validBlock,
+  validateBlockHeaderStructure,
+  validateBlockStructure,
+  type BlockErrorCode,
+  type BlockHeaderV1,
+  type BlockV1,
+  type BlockValidationResult,
+  type CreateBlockInput
+} from "./block/index.js";
