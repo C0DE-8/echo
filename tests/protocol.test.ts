@@ -22,13 +22,14 @@ function assertEchoProjectIdentity(): void {
 // Verifies phase gating by confirming only completed and current phases are implementable.
 function assertCurrentPhaseGate(): void {
   assert.deepEqual(getCurrentProtocolPhase(), {
-    index: 1,
-    name: "Cryptography",
+    index: 2,
+    name: "Wallet",
     status: "current"
   });
   assert.equal(canImplementPhase(0), true);
   assert.equal(canImplementPhase(1), true);
-  assert.equal(canImplementPhase(2), false);
+  assert.equal(canImplementPhase(2), true);
+  assert.equal(canImplementPhase(3), false);
 }
 
 // Verifies phase ordering by checking each phase index matches its array position.
@@ -40,7 +41,7 @@ function assertProtocolPhaseOrder(): void {
 
 // Verifies unresolved decisions remain explicit by checking representative future-phase decisions.
 function assertUnresolvedProtocolDecisions(): void {
-  assert.equal(isProtocolDecisionUnresolved("address format"), true);
+  assert.equal(isProtocolDecisionUnresolved("wallet seed and derivation standard"), true);
   assert.equal(isProtocolDecisionUnresolved("transaction data model"), true);
   assert.equal(isProtocolDecisionUnresolved("difficulty-adjustment algorithm"), true);
   assert.equal(isProtocolDecisionUnresolved("ERC-20 contract address"), false);

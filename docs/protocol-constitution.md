@@ -3,7 +3,12 @@
 ## Status
 
 Phase 0 established the rules for developing ECHO. Phase 1 establishes the
-cryptographic primitives future protocol phases will use.
+cryptographic primitives future protocol phases will use. Phase 2 establishes
+wallet identity and deterministic address derivation.
+
+- Phase 0 - COMPLETE
+- Phase 1 - COMPLETE
+- Phase 2 - IN PROGRESS
 
 ## Project Identity
 
@@ -21,6 +26,10 @@ cryptographic primitives future protocol phases will use.
 - Premine: 0 ECHO
 - Creator allocation: 0 ECHO
 - Transaction fees: paid to the successful miner
+- Address encoding: Bech32
+- Address payload: RIPEMD-160(SHA-256(SPKI public key PEM bytes))
+- Address version: 0
+- Address network identifiers: `echolocal`, `echotest`, and provisional `echo`
 
 ECHO is not a token deployed on another blockchain.
 
@@ -61,9 +70,8 @@ ECHO is not a token deployed on another blockchain.
 
 ## Current Unresolved Protocol Decisions
 
-The following decisions are intentionally unresolved after Phase 1:
+The following decisions are intentionally unresolved after Phase 2:
 
-- address format
 - wallet seed and derivation standard
 - transaction data model
 - block data model
@@ -76,6 +84,10 @@ The following decisions are intentionally unresolved after Phase 1:
 - fork choice rules
 - persistence schema
 - RPC methods
+- final mainnet address namespace confirmation
+- encrypted wallet storage format
+- TODO - PROTOCOL DECISION REQUIRED: wallet seed phrase standard
+- TODO - PROTOCOL DECISION REQUIRED: hierarchical deterministic wallet derivation
 
 No implementation may assume answers to these decisions before the relevant
 phase specifies them.

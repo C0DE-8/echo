@@ -7,7 +7,6 @@ export const PROTOCOL_KIND = "independent-blockchain";
 export const NATIVE_ASSET_NAME = "ECHO";
 
 export const UNRESOLVED_PROTOCOL_DECISIONS = [
-  "address format",
   "wallet seed and derivation standard",
   "transaction data model",
   "block data model",
@@ -19,7 +18,11 @@ export const UNRESOLVED_PROTOCOL_DECISIONS = [
   "P2P message formats",
   "fork choice rules",
   "persistence schema",
-  "RPC methods"
+  "RPC methods",
+  "final mainnet address namespace confirmation",
+  "encrypted wallet storage format",
+  "TODO - PROTOCOL DECISION REQUIRED: wallet seed phrase standard",
+  "TODO - PROTOCOL DECISION REQUIRED: hierarchical deterministic wallet derivation"
 ] as const;
 
 export type ProtocolConstitution = {

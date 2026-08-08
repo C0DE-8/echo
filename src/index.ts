@@ -13,7 +13,10 @@ export {
 } from "./protocol/phases.js";
 export {
   generateKeyPair,
+  derivePublicKeyFromPrivateKey,
   hash,
+  isValidPrivateKey,
+  isValidPublicKey,
   normalizeCryptoInput,
   sign,
   SIGNATURE_ALGORITHM,
@@ -21,3 +24,22 @@ export {
   type EchoKeyPair,
   type HashInput
 } from "./crypto/index.js";
+export {
+  createWallet,
+  decodeAddress,
+  deriveAddress,
+  ECHO_NETWORKS,
+  exportPrivateWallet,
+  exportPublicWallet,
+  getNetwork,
+  getNetworkByHumanReadablePart,
+  importWallet,
+  validateAddress,
+  WALLET_VERSION,
+  type DecodedAddress,
+  type EchoNetwork,
+  type EchoNetworkName,
+  type PrivateWalletExport,
+  type PublicWalletExport,
+  type WalletHandle
+} from "./wallet/index.js";
