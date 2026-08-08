@@ -5,14 +5,16 @@
 Phase 0 established the rules for developing ECHO. Phase 1 established the
 cryptographic primitives future protocol phases will use. Phase 2 established
 wallet identity and deterministic address derivation. Phase 3 implemented V1
-transactions with in-memory account state only. Phase 4 is designing the block
-and blockchain protocol without runtime block implementation.
+transactions with in-memory account state only. Phase 4 has a runtime block
+foundation for deterministic block objects, serialization, hashing, transaction
+commitments, and structural validation. Echo still does not have a running
+blockchain.
 
 - Phase 0 - COMPLETE
 - Phase 1 - COMPLETE
 - Phase 2 - COMPLETE
 - Phase 3 - COMPLETE
-- Phase 4 - DESIGN IN PROGRESS
+- Phase 4 - RUNTIME BLOCK FOUNDATION COMPLETE
 
 ## Project Identity
 
@@ -38,9 +40,13 @@ and blockchain protocol without runtime block implementation.
 - Transaction version: 1
 - Transaction amount unit: atomic units as unsigned integer text
 - Transaction ID: SHA-256 of canonical signed transaction bytes
-- Proposed block version: 1
-- Proposed block ID: SHA-256 of canonical block header bytes
-- Proposed transaction commitment: Merkle root of ordered transaction IDs
+- Block version: 1
+- Block ID: SHA-256 of canonical block header bytes
+- Transaction commitment: Merkle root of ordered transaction IDs
+- Empty transaction root: SHA-256 of `ECHO_EMPTY_TX_ROOT`
+- Provisional serialized block limit: 1,000,000 bytes
+- Provisional transactions per block limit: 2,000
+- Provisional serialized transaction limit inside blocks: 100,000 bytes
 
 ECHO is not a token deployed on another blockchain.
 
@@ -81,7 +87,7 @@ ECHO is not a token deployed on another blockchain.
 
 ## Current Unresolved Protocol Decisions
 
-The following decisions are intentionally unresolved during Phase 4 design:
+The following decisions remain unresolved after the runtime block foundation:
 
 - wallet seed and derivation standard
 - exact halving interval
@@ -98,9 +104,7 @@ The following decisions are intentionally unresolved during Phase 4 design:
 - TODO - PROTOCOL DECISION REQUIRED: hierarchical deterministic wallet derivation
 - TODO - PROTOCOL DECISION REQUIRED: future minimum consensus fee rule
 - TODO - PROTOCOL DECISION REQUIRED: future mempool nonce pending policy
-- TODO - PROTOCOL DECISION REQUIRED: approve ECHO V1 block format
 - TODO - PROTOCOL DECISION REQUIRED: approve exact genesis timestamps per network
-- TODO - PROTOCOL DECISION REQUIRED: approve serialized block byte and transaction count limits
 - TODO - PROTOCOL DECISION REQUIRED: approve timestamp drift rule before mining
 - TODO - PROTOCOL DECISION REQUIRED: define mining reward and coinbase rules in a later phase
 

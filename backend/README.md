@@ -4,10 +4,11 @@ ECHO is an independent blockchain project written in TypeScript. It is not an
 ERC-20 token, BEP-20 token, Solana token, or token deployed on another chain.
 
 The backend currently contains cryptography, wallet/address foundations,
-signed transactions, in-memory transaction execution, and protocol
-documentation for blocks. It does not yet contain runtime blockchain storage,
-mining, P2P networking, RPC, SQL persistence, public testnet, mainnet, or
-real-money functionality.
+signed transactions, in-memory transaction execution, block protocol
+documentation, and deterministic runtime block objects. It does not yet contain
+a running blockchain, genesis activation, persistent chain storage, mining, P2P
+networking, RPC, SQL persistence, public testnet, mainnet, or real-money
+functionality.
 
 ## Status
 
@@ -15,7 +16,7 @@ real-money functionality.
 - Phase 1 - Cryptography: COMPLETE
 - Phase 2 - Wallet and addresses: COMPLETE
 - Phase 3 - Transactions: COMPLETE
-- Phase 4 - Blockchain and block protocol: DESIGN IN PROGRESS
+- Phase 4 - Blockchain and block protocol: RUNTIME BLOCK FOUNDATION COMPLETE
 
 ## What Exists
 
@@ -71,9 +72,26 @@ real-money functionality.
 - Chain validation boundaries.
 - Fork handling documented as future consensus work.
 
+### Runtime Blocks
+
+- `BlockHeaderV1` runtime representation.
+- `BlockV1` runtime representation.
+- Canonical block header serialization.
+- Canonical full block serialization.
+- Strict block header and block deserialization.
+- SHA-256 block IDs over canonical header bytes.
+- Merkle transaction roots over ordered transaction IDs.
+- Empty-block transaction root handling.
+- Structural block validation.
+- Duplicate transaction ID rejection.
+- Serialized block and transaction size checks.
+- Consensus test vectors for transaction root, header bytes, block ID, and full
+  block bytes.
+
 ## What Does Not Exist Yet
 
-- Runtime block implementation.
+- Running blockchain.
+- Genesis activation.
 - Blockchain persistence.
 - Mining.
 - Proof-of-Work validation.
@@ -119,7 +137,7 @@ npm run build
 Current verification:
 
 ```text
-54 tests passing
+72 tests passing
 ```
 
 ## Project Layout
@@ -128,6 +146,7 @@ Current verification:
 backend/
   docs/
   src/
+    block/
     crypto/
     protocol/
     transaction/
@@ -156,3 +175,4 @@ backend/
 - [Transaction Protocol](docs/transaction-protocol.md)
 - [Transaction Implementation](docs/transaction-implementation.md)
 - [Block Protocol](docs/block-protocol.md)
+- [Block Runtime](docs/block-runtime.md)

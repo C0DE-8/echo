@@ -2,10 +2,11 @@
 
 ## Status
 
-Phase 4 is a design phase. This document specifies the proposed ECHO V1 block
-and blockchain protocol. No block runtime code, blockchain persistence, mining,
-Proof of Work validation, mempool, P2P networking, SQL storage, RPC, or mainnet
-deployment is implemented in this phase.
+Phase 4 began as a design phase. Echo now also has a runtime block foundation
+for deterministic block objects, serialization, hashing, transaction roots, and
+structural validation. Blockchain persistence, mining, Proof of Work validation,
+mempool, P2P networking, SQL storage, RPC, and mainnet deployment are still not
+implemented.
 
 ## Purpose
 
