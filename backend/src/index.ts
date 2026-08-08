@@ -43,3 +43,33 @@ export {
   type PublicWalletExport,
   type WalletHandle
 } from "./wallet/index.js";
+export {
+  applyTransaction,
+  ATOMIC_UNITS_PER_ECHO,
+  canonicalizeInteger,
+  createTransaction,
+  getSigningPayload,
+  getTransactionId,
+  InMemoryAccountState,
+  invalidTransaction,
+  isCanonicalIntegerString,
+  MAX_ATOMIC_UNITS,
+  MAX_ECHO_SUPPLY,
+  MAX_NONCE,
+  parseCanonicalInteger,
+  serializeSignedTransaction,
+  serializeUnsignedTransaction,
+  TRANSACTION_ERROR_CODES,
+  TRANSACTION_VERSION,
+  validateTransactionAgainstState,
+  validTransaction,
+  verifyTransaction,
+  type Account,
+  type CanonicalInteger,
+  type CreateTransactionInput,
+  type SignedTransaction,
+  type TransactionApplicationResult,
+  type TransactionErrorCode,
+  type TransactionValidationResult,
+  type UnsignedTransaction
+} from "./transaction/index.js";

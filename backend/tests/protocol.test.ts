@@ -22,14 +22,15 @@ function assertEchoProjectIdentity(): void {
 // Verifies phase gating by confirming only completed and current phases are implementable.
 function assertCurrentPhaseGate(): void {
   assert.deepEqual(getCurrentProtocolPhase(), {
-    index: 2,
-    name: "Wallet",
+    index: 3,
+    name: "Transactions",
     status: "current"
   });
   assert.equal(canImplementPhase(0), true);
   assert.equal(canImplementPhase(1), true);
   assert.equal(canImplementPhase(2), true);
-  assert.equal(canImplementPhase(3), false);
+  assert.equal(canImplementPhase(3), true);
+  assert.equal(canImplementPhase(4), false);
 }
 
 // Verifies phase ordering by checking each phase index matches its array position.

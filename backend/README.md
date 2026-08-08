@@ -2,8 +2,8 @@
 
 ECHO is an independent blockchain project implemented in TypeScript.
 
-This repository is currently in **Phase 2 - Wallet and Address Foundation**. No
-transaction, consensus, P2P, RPC, testnet, or real-money functionality is
+This repository is currently in **Phase 3 - Transaction Implementation**. No
+blocks, blockchain, consensus, P2P, RPC, testnet, or real-money functionality is
 implemented yet.
 
 ## Requirements
@@ -54,8 +54,26 @@ Phase 2 adds:
 - wallet import from supported private-key PEM
 - separated public and sensitive private wallet exports
 
+Phase 3 design defines:
+
+- proposed account-based transaction model
+- transaction fields and validation rules
+- canonical serialization requirements
+- signature payload and transaction ID design
+- nonce, fee, replay protection, and state transition rules
+
+Phase 3 implementation adds:
+
+- signed ECHO V1 transactions
+- deterministic canonical transaction serialization
+- transaction IDs
+- pure transaction verification
+- in-memory account state for execution tests
+- atomic transaction application
+
 ## Phase Status
 
 - Phase 0 - COMPLETE
 - Phase 1 - COMPLETE
-- Phase 2 - IN PROGRESS
+- Phase 2 - COMPLETE
+- Phase 3 - IN PROGRESS

@@ -9,8 +9,8 @@ export type ProtocolPhase = {
 export const PROTOCOL_PHASES = [
   { index: 0, name: "Protocol Constitution", status: "future" },
   { index: 1, name: "Cryptography", status: "future" },
-  { index: 2, name: "Wallet", status: "current" },
-  { index: 3, name: "Transactions", status: "future" },
+  { index: 2, name: "Wallet", status: "future" },
+  { index: 3, name: "Transactions", status: "current" },
   { index: 4, name: "Blockchain", status: "future" },
   { index: 5, name: "State / Ledger", status: "future" },
   { index: 6, name: "Mempool", status: "future" },

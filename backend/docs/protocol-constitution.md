@@ -2,13 +2,16 @@
 
 ## Status
 
-Phase 0 established the rules for developing ECHO. Phase 1 establishes the
-cryptographic primitives future protocol phases will use. Phase 2 establishes
-wallet identity and deterministic address derivation.
+Phase 0 established the rules for developing ECHO. Phase 1 established the
+cryptographic primitives future protocol phases will use. Phase 2 established
+wallet identity and deterministic address derivation. Phase 3 is designing the
+transaction protocol and implements V1 transaction runtime code with in-memory
+account state only.
 
 - Phase 0 - COMPLETE
 - Phase 1 - COMPLETE
-- Phase 2 - IN PROGRESS
+- Phase 2 - COMPLETE
+- Phase 3 - IN PROGRESS
 
 ## Project Identity
 
@@ -30,6 +33,10 @@ wallet identity and deterministic address derivation.
 - Address payload: RIPEMD-160(SHA-256(SPKI public key PEM bytes))
 - Address version: 0
 - Address network identifiers: `echolocal`, `echotest`, and provisional `echo`
+- Proposed transaction model: account-based state with address balance and nonce
+- Transaction version: 1
+- Transaction amount unit: atomic units as unsigned integer text
+- Transaction ID: SHA-256 of canonical signed transaction bytes
 
 ECHO is not a token deployed on another blockchain.
 
@@ -70,10 +77,9 @@ ECHO is not a token deployed on another blockchain.
 
 ## Current Unresolved Protocol Decisions
 
-The following decisions are intentionally unresolved after Phase 2:
+The following decisions are intentionally unresolved during Phase 3 design:
 
 - wallet seed and derivation standard
-- transaction data model
 - block data model
 - genesis block contents
 - exact halving interval
@@ -88,6 +94,8 @@ The following decisions are intentionally unresolved after Phase 2:
 - encrypted wallet storage format
 - TODO - PROTOCOL DECISION REQUIRED: wallet seed phrase standard
 - TODO - PROTOCOL DECISION REQUIRED: hierarchical deterministic wallet derivation
+- TODO - PROTOCOL DECISION REQUIRED: future minimum consensus fee rule
+- TODO - PROTOCOL DECISION REQUIRED: future mempool nonce pending policy
 
 No implementation may assume answers to these decisions before the relevant
 phase specifies them.
